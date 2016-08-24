@@ -1,0 +1,24 @@
+{#{% extends 'base.html.twig' %}#}
+
+{# block re-definition only #}
+
+{% block body %}
+    <p>Hello {{ name | upper }}</p>
+    {{ dump(name) }}
+
+    {% block toolbar %}{% endblock %}
+
+    <div>
+        {{ include(':default:index.html.twig', {'base_dir': '/directory'} ) }}
+    </div>
+
+    {% set name = '<script>alert("XSS")</script>' %}
+
+    <div>
+        {{ name|raw }}
+
+        {#{{ render(controller('AppBundle:Default:index', {})) }}#}
+    </div>
+{% endblock %}
+
+{#{% block title %} {{ parent() }} Mon appli {% endblock %}#}

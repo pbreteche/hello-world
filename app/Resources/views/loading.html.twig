@@ -1,0 +1,12 @@
+<style>
+    .rotating {
+        animation: rotation .8s linear infinite;
+    }
+
+    @keyframes rotation {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<img class="rotating" src="{{ asset('img/loading.png') }}" />

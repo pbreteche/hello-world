@@ -1,0 +1,12 @@
+post.field:
+    title: Title
+    body: Body
+    publisheat: 'Published at'
+post:
+  nav:
+    back_to_list: 'Back to the list'
+  list:
+    count: 'Tge article count is %nombre%'
+    count2: '{0} il n''y a pas d''article | {1} il y a un article | ]1, Inf[ il y a %nombre% articles'
+  new:
+    confirm_notice: 'L''article a bien été ajouté'

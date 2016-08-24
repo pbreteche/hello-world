@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% for notice in app.session.flashBag.get('notice') %}
+            <div class="notice"> {{ notice }} </div>
+        {% endfor %}
+        {% block body %}{% endblock %}
+        {{ render(controller('AppBundle:ToDo:show')) }}
+        {{ render_hinclude(controller('AppBundle:ToDo:show')) }}
+        {{ render_esi(controller('AppBundle:ToDo:show')) }}
+        {% block javascripts %}
+        <script src="{{ asset('js/hinclude.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,12 @@
+post.field:
+    title: Titre
+    body: Corps test
+    publisheat: 'Publié le'
+post:
+  nav:
+    back_to_list: 'Retour à la liste'
+  list:
+    count: 'Le nombre d''article est %nombre%'
+    count2: '{0} il n''y a pas d''article | {1} il y a un article | ]1, Inf[ il y a %nombre% articles'
+  new:
+    confirm_notice: 'L''article a bien été ajouté'

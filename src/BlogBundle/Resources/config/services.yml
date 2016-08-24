@@ -1,0 +1,26 @@
+parameters:
+    term: 'Hello'
+
+services:
+    blog.author_repository:
+        class: Doctrine\ORM\EntityRepository
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments: ['BlogBundle:Author']
+
+    validator.non_existing_author:
+        class: BlogBundle\Validator\Constraints\NonExistingAuthorValidator
+        arguments: ["@blog.author_repository"]
+        tags:
+            - { name: validator.constraint_validator, alias: blog.validate.non_existing_author }
+
+    blog.helloer:
+        class: BlogBundle\utils\Helloer
+        arguments:
+            - '%term%'
+        calls:
+            - [ 'uneMethode', ['arg1', 'arg2']]
+
+    blog.post_type:
+        class: BlogBundle\Form\PostType
+        tags:
+            - { name: form.type, alias: blog.post_type }

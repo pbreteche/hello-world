@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Post</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ post.id }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'post.field.title' | trans }}</th>
+                <td>{{ post.title }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'post.field.body' | trans }}</th>
+                <td>{{ post.body }}</td>
+            </tr>
+            {%  if is_granted('ROLE_USER') %}
+            <tr>
+                <th>{{ 'post.field.publisheat' | trans }}</th>
+                <td>{{ post.publishedAt | date("h:m:s") }}</td>
+            </tr>
+            {%  endif %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('post_index') }}">{{ 'post.nav.back_to_list' | trans }}</a>
+        </li>
+        <li>
+            <a href="{{ path('post_edit', { 'slug': post.slug }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
