@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use BlogBundle\Entity\Post;
-use BlogBundle\Form\PostType;
+use BlogBundle\Form\Type\PostType;
 
 /**
  * Post controller.

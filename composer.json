@@ -2,6 +2,7 @@
     "name": "pierre/hello.world",
     "license": "proprietary",
     "type": "project",
+    "description": "a sample project for training purpose",
     "autoload": {
         "psr-4": {
             "": "src/"

@@ -1,12 +1,12 @@
 <?php
 
-namespace BlogBundle\Form;
+namespace BlogBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class TestCrudType extends AbstractType
+class PostType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,7 +15,9 @@ class TestCrudType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('testField')
+            ->add('title')
+            ->add('body')
+            ->add('publishedAt')
         ;
     }
     
@@ -25,7 +27,7 @@ class TestCrudType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'BlogBundle\Entity\TestCrud'
+            'data_class' => 'BlogBundle\Entity\Post'
         ));
     }
 }

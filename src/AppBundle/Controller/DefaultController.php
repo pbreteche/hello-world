@@ -100,7 +100,7 @@ class DefaultController extends Controller
     /**
      * @Route("/setLocale/{_locale}")
      */
-    public function setLocale(Request $request)
+    public function setLocaleAction(Request $request)
     {
         $request->getSession()->set('_locale', $request->getLocale());
         return $this->redirectToRoute('homepage');

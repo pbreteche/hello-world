@@ -3,7 +3,7 @@
 namespace BlogBundle\Controller;
 
 use BlogBundle\Entity\Author;
-use BlogBundle\Form\AuthorType;
+use BlogBundle\Form\Type\AuthorType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\Form;

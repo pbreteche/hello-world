@@ -15,7 +15,7 @@ class DemoController
 {
     private $todoTaskManager;
 
-    public function displayTodoList()
+    public function displayTodoListAction()
     {
         $todoList = $this->getTodoTaskManager()->findActiveByDeadline();
         return [

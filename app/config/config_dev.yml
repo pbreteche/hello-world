@@ -1,6 +1,14 @@
 imports:
     - { resource: config.yml }
 
+    users:
+        ryan:
+            password: ryanpass
+            roles: 'ROLE_USER'
+        admin:
+            password: kitten
+            roles: 'ROLE_ADMIN'
+
 framework:
     router:
         resource: "%kernel.root_dir%/config/routing_dev.yml"
