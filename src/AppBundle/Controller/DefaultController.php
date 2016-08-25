@@ -19,7 +19,7 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
-     * J'aime mangé de la pizza
+     * Symfony homepage
      *
      * @Route("/", name="homepage")
      */
