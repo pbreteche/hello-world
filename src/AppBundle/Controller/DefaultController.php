@@ -21,6 +21,8 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller
 {
     /**
+     * Display welcome to Symfony framework
+     *
      * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)
