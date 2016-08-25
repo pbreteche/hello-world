@@ -43,7 +43,6 @@ class DefaultController extends Controller
      */
     public function helloAction($name, Request $request)
     {
-        $get = $request->query->get('param', 0);
         $post = $request->request->get('inputname', 'default');
         $request->getSession()->get('sessiondata');
         $request->getPreferredLanguage(['fr', 'en']);
