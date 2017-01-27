@@ -8,13 +8,15 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * Post
  *
+ * @author Pierre
+ *
  * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="BlogBundle\Repository\PostRepository")
  */
 class Post
 {
     /**
-     * @var int
+     * @var int primary key and identifier for Doctrine ORM entity manager
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id

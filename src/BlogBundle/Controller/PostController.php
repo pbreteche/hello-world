@@ -77,6 +77,7 @@ class PostController extends Controller
      * @Cache(expires="+2 days")
      * @Template("post/show.html.twig")
      * @Method("GET")
+     *
      * @param Post $post
      * @return array
      */
