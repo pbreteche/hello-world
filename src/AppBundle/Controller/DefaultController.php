@@ -18,35 +18,38 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class DefaultController extends Controller
 {
-    /**
-     * Symfony homepage
-     *
-     * @Route("/", name="homepage")
-     */
-    public function indexAction(Request $request)
+  /**
+   * Symfony homepage
+   *
+   * @Route("/", name="homepage")
+   * @return \Symfony\Component\HttpFoundation\Response
+   */
+    public function indexAction()
     {
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
+            'base_dir' => 'toto',
         ]);
     }
 
-    /**
-     * @Route(
-     *      "/hello/{name}",
-     *      defaults={"name"="world"},
-     *      requirements={"name"="[A-Z][a-z]+"}
-     * )
-     * @Method("GET")
-     * @Cache(expires="+2days")
-     * @Template()
-     */
+  /**
+   * @Route(
+   *      "/hello/{name}",
+   *      defaults={"name"="world"},
+   *      requirements={"name"="[A-Z][a-z]+"}
+   * )
+   * @Method("GET")
+   * @Cache(expires="+2days")
+   * @Template()
+   * @param $name
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   * @return array|\Symfony\Component\HttpFoundation\Response
+   * @throws \Exception
+   */
     public function helloAction($name, Request $request)
     {
         $request->getSession()->get('sessiondata');
         $request->getPreferredLanguage(['fr', 'en']);
-
-
 
         switch ($name) {
             case 'Oups':
@@ -85,9 +88,9 @@ class DefaultController extends Controller
 /*
         $response->setLastModified($article->getLastModified());
         $response->setEtag(md5($article->getBody()));
-*/
-        $subResponse = $this->forward('BlogBundle:Post:show', ['slug' => 'sdfgskdh hff']);
 
+        $subResponse = $this->forward('BlogBundle:Post:show', ['slug' => 'sdfgskdh hff']);
+*/
         if ($response->isNotModified($request)) {
             return $response;
         }
@@ -95,9 +98,14 @@ class DefaultController extends Controller
         return ['name'=>$name];
     }
 
-    /**
-     * @Route("/setLocale/{_locale}")
-     */
+  /**
+   * @Route("/setLocale/{_locale}")
+   *
+   * Action that define user locale
+   *
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   * @return \Symfony\Component\HttpFoundation\RedirectResponse
+   */
     public function setLocaleAction(Request $request)
     {
         $request->getSession()->set('_locale', $request->getLocale());
