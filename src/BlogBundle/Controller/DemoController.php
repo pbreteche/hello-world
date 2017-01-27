@@ -10,7 +10,6 @@ namespace BlogBundle\Controller;
 
 use BlogBundle\Utils\TodoTaskManager;
 
-
 class DemoController
 {
     private $todoTaskManager;
@@ -30,5 +29,4 @@ class DemoController
         }
         return $this->todoTaskManager;
     }
-
 }

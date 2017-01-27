@@ -125,4 +125,3 @@ class Article
         return $this->publishedAt;
     }
 }
-

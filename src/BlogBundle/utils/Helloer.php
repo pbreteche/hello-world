@@ -8,7 +8,6 @@
 
 namespace BlogBundle\utils;
 
-
 class Helloer
 {
     private $term;
@@ -22,9 +21,8 @@ class Helloer
         $this->term = $term;
     }
 
-    public function hello ($name = 'world')
+    public function hello($name = 'world')
     {
         return $this->term . ' ' . $name . '!';
     }
-
 }

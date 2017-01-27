@@ -154,4 +154,3 @@ class Post
         return $this->publishedAt;
     }
 }
-

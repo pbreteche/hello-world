@@ -8,7 +8,6 @@
 
 namespace BlogBundle\Validator\Constraints;
 
-
 use BlogBundle\Repository\AuthorRepository;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;

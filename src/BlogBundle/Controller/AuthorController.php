@@ -27,7 +27,6 @@ class AuthorController extends Controller
         }
 
         if ($form->isValid()) {
-
         }
 
         return $this->render('BlogBundle:Author:create.html.twig', array(
@@ -44,5 +43,4 @@ class AuthorController extends Controller
             $form->get('email')->addError(new FormError('email déjà utilisé'));
         }
     }
-
 }

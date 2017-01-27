@@ -8,7 +8,6 @@
 
 namespace BlogBundle\Utils;
 
-
 class TodoTaskManager implements TodoListInterface
 {
 

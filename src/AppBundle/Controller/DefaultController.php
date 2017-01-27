@@ -48,7 +48,7 @@ class DefaultController extends Controller
 
 
 
-        switch($name) {
+        switch ($name) {
             case 'Oups':
                 throw new \Exception();
             case 'Notfound':
@@ -103,5 +103,4 @@ class DefaultController extends Controller
         $request->getSession()->set('_locale', $request->getLocale());
         return $this->redirectToRoute('homepage');
     }
-
 }
