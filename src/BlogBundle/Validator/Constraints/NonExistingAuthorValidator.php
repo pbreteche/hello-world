@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: pierre
- * Date: 20/07/16
- * Time: 11:34
- */
 
 namespace BlogBundle\Validator\Constraints;
 
@@ -27,7 +21,7 @@ class NonExistingAuthorValidator extends ConstraintValidator
     /**
      * Checks if the passed value is valid.
      *
-     * @param mixed $value The value that should be validated
+     * @param mixed $email The value that should be validated
      * @param Constraint $constraint The constraint for the validation
      */
     public function validate($email, Constraint $constraint)

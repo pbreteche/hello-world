@@ -75,6 +75,7 @@ class PostController extends Controller
      *
      * @Route("/{slug}", name="post_show")
      * @Cache(expires="+2 days")
+     * @Cache(lastModified="post.getUpdatedAt()")
      * @Template("post/show.html.twig")
      * @Method("GET")
      *
