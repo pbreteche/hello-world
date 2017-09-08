@@ -85,12 +85,7 @@ class DefaultController extends Controller
         $response->setMaxAge(60);
         $response->setPublic();
         $response->setExpires(new \DateTime('tomorrow'));
-/*
-        $response->setLastModified($article->getLastModified());
-        $response->setEtag(md5($article->getBody()));
 
-        $subResponse = $this->forward('BlogBundle:Post:show', ['slug' => 'sdfgskdh hff']);
-*/
         if ($response->isNotModified($request)) {
             return $response;
         }
